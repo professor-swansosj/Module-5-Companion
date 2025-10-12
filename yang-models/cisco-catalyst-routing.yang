@@ -1,0 +1,365 @@
+module cisco-catalyst-routing {
+  yang-version 1.1;
+  namespace "http://cisco.com/ns/yang/cisco-catalyst-routing";
+  prefix cat-rt;
+
+  organization "Cisco Systems";
+  contact "Cisco Support";
+  
+  description
+    "Sample YANG model for Cisco Catalyst routing configuration.
+     This is a simplified version for educational purposes.";
+
+  revision 2025-01-01 {
+    description "Initial version for educational use";
+  }
+
+  // Import standard modules
+  import ietf-inet-types {
+    prefix inet;
+  }
+
+  import ietf-routing {
+    prefix rt;
+  }
+
+  container routing {
+    description "Global routing configuration";
+
+    container ospf {
+      description "OSPF configuration";
+
+      list process {
+        key "process-id";
+        description "OSPF process configuration";
+
+        leaf process-id {
+          type uint16 {
+            range "1..65535";
+          }
+          description "OSPF process identifier";
+        }
+
+        leaf router-id {
+          type inet:ipv4-address;
+          description "OSPF router identifier";
+        }
+
+        container area {
+          description "OSPF area configuration";
+
+          list area-config {
+            key "area-id";
+            description "Per-area configuration";
+
+            leaf area-id {
+              type union {
+                type uint32;
+                type inet:ipv4-address;
+              }
+              description "Area identifier";
+            }
+
+            leaf stub {
+              type boolean;
+              default false;
+              description "Configure area as stub";
+            }
+
+            leaf no-summary {
+              when "../stub = 'true'";
+              type boolean;
+              default false;
+              description "Do not inject summary LSAs";
+            }
+
+            list network {
+              key "network address";
+              description "Network statements";
+
+              leaf network {
+                type inet:ipv4-prefix;
+                description "Network to advertise";
+              }
+
+              leaf address {
+                type inet:ipv4-address;
+                description "Network address";
+              }
+
+              leaf wildcard {
+                type inet:ipv4-address;
+                description "Wildcard mask";
+              }
+            }
+          }
+        }
+
+        container interface {
+          description "OSPF interface configuration";
+
+          list interface-config {
+            key "interface-name";
+            description "Per-interface OSPF settings";
+
+            leaf interface-name {
+              type string;
+              description "Interface name";
+            }
+
+            leaf cost {
+              type uint32 {
+                range "1..65535";
+              }
+              description "Interface cost";
+            }
+
+            leaf hello-interval {
+              type uint16 {
+                range "1..65535";
+              }
+              units "seconds";
+              default 10;
+              description "Hello packet interval";
+            }
+
+            leaf dead-interval {
+              type uint16 {
+                range "1..65535";
+              }
+              units "seconds";
+              default 40;
+              description "Dead neighbor interval";
+            }
+
+            leaf priority {
+              type uint8 {
+                range "0..255";
+              }
+              default 1;
+              description "Router priority for DR election";
+            }
+          }
+        }
+      }
+    }
+
+    container bgp {
+      description "BGP configuration";
+
+      leaf autonomous-system {
+        type uint32 {
+          range "1..4294967295";
+        }
+        description "Local AS number";
+      }
+
+      leaf router-id {
+        type inet:ipv4-address;
+        description "BGP router identifier";
+      }
+
+      container neighbor {
+        description "BGP neighbor configuration";
+
+        list peer {
+          key "neighbor-address";
+          description "BGP peer configuration";
+
+          leaf neighbor-address {
+            type inet:ip-address;
+            description "Neighbor IP address";
+          }
+
+          leaf remote-as {
+            type uint32 {
+              range "1..4294967295";
+            }
+            description "Remote AS number";
+          }
+
+          leaf description {
+            type string;
+            description "Neighbor description";
+          }
+
+          leaf update-source {
+            type string;
+            description "Source interface for BGP sessions";
+          }
+
+          leaf ebgp-multihop {
+            type uint8 {
+              range "1..255";
+            }
+            description "EBGP multihop TTL";
+          }
+
+          container timers {
+            description "BGP timer configuration";
+
+            leaf keepalive {
+              type uint16 {
+                range "1..65535";
+              }
+              units "seconds";
+              default 60;
+              description "Keepalive interval";
+            }
+
+            leaf holdtime {
+              type uint16 {
+                range "3..65535";
+              }
+              units "seconds";
+              default 180;
+              description "Hold time";
+            }
+          }
+
+          container address-family {
+            description "Address family configuration";
+
+            container ipv4-unicast {
+              description "IPv4 unicast configuration";
+
+              leaf activate {
+                type boolean;
+                default false;
+                description "Activate this address family";
+              }
+
+              leaf next-hop-self {
+                type boolean;
+                default false;
+                description "Set next-hop to self";
+              }
+
+              leaf soft-reconfiguration {
+                type boolean;
+                default false;
+                description "Enable soft reconfiguration";
+              }
+            }
+          }
+        }
+      }
+
+      container network {
+        description "Networks to advertise";
+
+        list advertise {
+          key "prefix";
+          description "Network advertisement";
+
+          leaf prefix {
+            type inet:ipv4-prefix;
+            description "Network prefix to advertise";
+          }
+
+          leaf route-map {
+            type string;
+            description "Route map to apply";
+          }
+        }
+      }
+    }
+
+    container static-routes {
+      description "Static route configuration";
+
+      list ipv4 {
+        key "destination";
+        description "IPv4 static routes";
+
+        leaf destination {
+          type inet:ipv4-prefix;
+          description "Destination network";
+        }
+
+        choice next-hop {
+          description "Next hop specification";
+
+          case interface {
+            leaf outbound-interface {
+              type string;
+              description "Outbound interface";
+            }
+          }
+
+          case ip-address {
+            leaf next-hop-address {
+              type inet:ipv4-address;
+              description "Next hop IP address";
+            }
+          }
+
+          case both {
+            leaf interface-name {
+              type string;
+              description "Outbound interface";
+            }
+            
+            leaf gateway {
+              type inet:ipv4-address;
+              description "Gateway address";
+            }
+          }
+        }
+
+        leaf administrative-distance {
+          type uint8 {
+            range "1..255";
+          }
+          default 1;
+          description "Administrative distance";
+        }
+
+        leaf permanent {
+          type boolean;
+          default false;
+          description "Permanent route";
+        }
+
+        leaf tag {
+          type uint32;
+          description "Route tag";
+        }
+      }
+    }
+
+    container vrf {
+      description "VRF configuration";
+
+      list instance {
+        key "name";
+        description "VRF instance";
+
+        leaf name {
+          type string;
+          description "VRF name";
+        }
+
+        leaf description {
+          type string;
+          description "VRF description";
+        }
+
+        leaf rd {
+          type string;
+          description "Route distinguisher";
+        }
+
+        leaf-list import-rt {
+          type string;
+          description "Import route targets";
+        }
+
+        leaf-list export-rt {
+          type string;
+          description "Export route targets";
+        }
+      }
+    }
+  }
+}

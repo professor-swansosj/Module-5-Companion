@@ -1,0 +1,74 @@
+{
+  "ietf-interfaces:interfaces": {
+    "interface": [
+      {
+        "name": "GigabitEthernet1/0/1",
+        "description": "Connection to Server Room Switch",
+        "type": "iana-if-type:ethernetCsmacd",
+        "enabled": true,
+        "ietf-ip:ipv4": {
+          "enabled": true,
+          "address": [
+            {
+              "ip": "192.168.10.1",
+              "netmask": "255.255.255.0"
+            }
+          ]
+        },
+        "cisco-ios-xe-interfaces:switchport": {
+          "mode": "access",
+          "access": {
+            "vlan": 10
+          }
+        }
+      },
+      {
+        "name": "GigabitEthernet1/0/2", 
+        "description": "Trunk to Distribution Layer",
+        "type": "iana-if-type:ethernetCsmacd",
+        "enabled": true,
+        "cisco-ios-xe-interfaces:switchport": {
+          "mode": "trunk",
+          "trunk": {
+            "allowed": {
+              "vlan": "10,20,30,40"
+            },
+            "native": {
+              "vlan": 1
+            }
+          }
+        }
+      },
+      {
+        "name": "Loopback0",
+        "description": "Management Loopback Interface",
+        "type": "iana-if-type:softwareLoopback", 
+        "enabled": true,
+        "ietf-ip:ipv4": {
+          "enabled": true,
+          "address": [
+            {
+              "ip": "10.1.1.1",
+              "netmask": "255.255.255.255"
+            }
+          ]
+        }
+      },
+      {
+        "name": "Vlan10",
+        "description": "User VLAN Interface",
+        "type": "iana-if-type:l3ipvlan",
+        "enabled": true,
+        "ietf-ip:ipv4": {
+          "enabled": true,
+          "address": [
+            {
+              "ip": "192.168.10.1", 
+              "netmask": "255.255.255.0"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

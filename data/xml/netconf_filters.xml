@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Sample NETCONF Filter XML -->
+<!-- This demonstrates various filter patterns used in NETCONF get operations -->
+
+<!-- Filter 1: Get all interfaces -->
+<filter xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
+  <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces"/>
+</filter>
+
+<!-- Filter 2: Get specific interface -->
+<filter xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
+  <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+    <interface>
+      <name>GigabitEthernet1/0/1</name>
+    </interface>
+  </interfaces>
+</filter>
+
+<!-- Filter 3: Get interface statistics only -->
+<filter xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
+  <interfaces-state xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+    <interface>
+      <name/>
+      <statistics/>
+    </interface>
+  </interfaces-state>
+</filter>
+
+<!-- Filter 4: Get system information -->
+<filter xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
+  <system xmlns="urn:ietf:params:xml:ns:yang:ietf-system">
+    <hostname/>
+    <contact/>
+    <location/>
+  </system>
+</filter>
+
+<!-- Filter 5: Get routing table -->
+<filter xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
+  <routing xmlns="urn:ietf:params:xml:ns:yang:ietf-routing">
+    <routing-instance>
+      <ribs>
+        <rib>
+          <routes/>
+        </rib>
+      </ribs>
+    </routing-instance>
+  </routing>
+</filter>
+
+<!-- Filter 6: Get OSPF configuration -->
+<filter xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
+  <routing xmlns="urn:ietf:params:xml:ns:yang:ietf-routing">
+    <router-id/>
+    <control-plane-protocols>
+      <control-plane-protocol>
+        <type xmlns:ospf="urn:ietf:params:xml:ns:yang:ietf-ospf">ospf:ospfv2</type>
+        <name/>
+        <ospf xmlns="urn:ietf:params:xml:ns:yang:ietf-ospf"/>
+      </control-plane-protocol>
+    </control-plane-protocols>
+  </routing>
+</filter>
