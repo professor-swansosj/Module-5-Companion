@@ -1,8 +1,10 @@
-# 🚀 Module 5 Companion: Master Network Programmability
+# Module 5 Companion - Master Network Programmability
+
+## Software Defined Networking Course
 
 > **Ready to unlock the power of modern network automation?** You've conquered CLI scripting with Netmiko and mastered APIs with Requests. Now it's time to explore the cutting-edge world of **RESTCONF, NETCONF, and YANG** - the technologies that make enterprise network automation truly scalable!
 
-## 🎯 What You'll Master
+## 🎯 What You'll Practice
 
 Transform from CLI scripter to network automation architect by hands-on practice with:
 
@@ -13,7 +15,7 @@ Transform from CLI scripter to network automation architect by hands-on practice
 
 **Challenge Level**: 🔥🔥🔥 **Advanced** (We're preparing you to ace those assessments!)
 
-## 🗺️ Your Learning Journey
+## � Learning Path
 
 Each module builds your expertise progressively. **You've got this!**
 
@@ -59,24 +61,24 @@ Each module builds your expertise progressively. **You've got this!**
 **Skills**: Multi-protocol workflows, error recovery, production-ready scripts  
 **Victory Lap**: You're now a network programmability architect!
 
-## 🎓 Ready to Code?
+## 🚀 Getting Hands-On
 
 Each directory contains your mission briefing and starter code. **No copy-paste solutions here** - you'll build real skills by implementing the TODO items yourself!
 
 **Pro Tip**: Start with Module 01 to explore and get oriented, then dive into RESTCONF since you already rock the Requests library!
 
-## 💡 Practice Philosophy
+## 🎯 Practice Callouts
 
 > **"We don't give you the fish - we teach you to fish!"** Every module contains starter code with TODO items that YOU need to implement. This isn't about copying solutions; it's about building the skills you'll need for assessments and your career.
 
-## 🚀 Quick Start
+## � Prerequisites
 
 1. **Install requirements**: `pip install -r requirements.txt`
-2. **Start exploring**: Begin with `01_exploration/` 
+2. **Start exploring**: Begin with `01_exploration/`
 3. **Follow your curiosity**: Each README guides your next steps
 4. **Code to learn**: Complete the TODO items to make everything work
 
-## 📚 Your Toolkit
+## � Your Toolkit
 
 **Languages & Libraries You'll Use:**
 
@@ -99,7 +101,7 @@ Each directory contains your mission briefing and starter code. **No copy-paste 
 - 🆕 NETCONF XML-based protocols
 - 🆕 Enterprise network automation patterns
 
-## 🎯 Success Criteria
+## � Success Criteria
 
 By the end, you'll confidently explain and demonstrate:
 
@@ -108,5 +110,7 @@ By the end, you'll confidently explain and demonstrate:
 - Building Python scripts that configure network devices safely
 - Parsing and processing both JSON and XML network data
 - Integrating multiple protocols for comprehensive automation solutions
+
+## 🎉 Ready to Begin?
 
 **You've got this!** 🌟 Start with Module 01 and discover what's waiting for you!
