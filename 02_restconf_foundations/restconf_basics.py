@@ -1,5 +1,5 @@
 """
-Module 02: RESTCONF Foundations
+Section 02: RESTCONF Foundations
 
 TODO: Apply your Module 4 requests skills to network automation!
 CHALLENGE: Build functions to get device information via RESTCONF
