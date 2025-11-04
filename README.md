@@ -15,47 +15,47 @@ Transform from CLI scripter to network automation architect by hands-on practice
 
 **Challenge Level**: 🔥🔥🔥 **Advanced** (We're preparing you to ace those assessments!)
 
-## � Learning Path
+## 🗂 Learning Path
 
-Each module builds your expertise progressively. **You've got this!**
+Each section builds your expertise progressively. **You've got this!**
 
-### 01️⃣ Discovery & Exploration
+### [Section 01: Network Device Explorer](./01_exploration/)
 
 **Mission**: Get familiar with YANG models and network device capabilities  
 **Skills**: Use `help()`, `dir()`, explore device schemas  
 **Challenge**: Discover what's possible before diving deep!
 
-### 02️⃣ RESTCONF Foundations  
+### [Section 02: RESTCONF Foundations](./02_restconf_foundations/)  
 
 **Mission**: Build on your Requests library skills for network automation  
 **Skills**: Authentication, basic GET operations, JSON parsing  
 **Why Start Here**: You already know Requests - let's level it up!
 
-### 03️⃣ YANG Data Models Deep Dive
+### [Section 03: YANG Models - The Network "Blueprint"](./03_yang_models/) 
 
 **Mission**: Master the "blueprints" that make everything else possible  
 **Skills**: Navigate YANG trees, understand data structures, find what you need  
 **Game Changer**: This unlocks both RESTCONF and NETCONF mastery!
 
-### 04️⃣ Advanced RESTCONF Operations
+### [Section 04: RESTCONF Configuration Management](./04_advanced_restconf/) 
 
 **Mission**: Configuration changes and complex data retrieval  
 **Skills**: POST/PUT/DELETE operations, error handling, bulk operations  
 **Real World**: Enterprise-grade network automation starts here!
 
-### 05️⃣ NETCONF Fundamentals
+### [Section 05: NETCONF Fundamentals](./05_netconf_fundamentals/) 
 
 **Mission**: Explore XML-based network management protocols  
 **Skills**: ncclient library, XML parsing, NETCONF capabilities  
 **New Territory**: Different from REST, but incredibly powerful!
 
-### 06️⃣ Advanced NETCONF & XML Processing
+### [Section 06: Advanced NETCONF & XML Processing](./06_advanced_netconf/) 
 
 **Mission**: Complex configurations and sophisticated data extraction  
 **Skills**: XPath queries, configuration transactions, advanced XML manipulation  
 **Expert Level**: Handle enterprise network complexity with confidence!
 
-### 07️⃣ Integration & Automation
+### [Section 07: Integration & Automation](./07_integration/) 
 
 **Mission**: Combine RESTCONF and NETCONF for complete solutions  
 **Skills**: Multi-protocol workflows, error recovery, production-ready scripts  
@@ -65,20 +65,20 @@ Each module builds your expertise progressively. **You've got this!**
 
 Each directory contains your mission briefing and starter code. **No copy-paste solutions here** - you'll build real skills by implementing the TODO items yourself!
 
-**Pro Tip**: Start with Module 01 to explore and get oriented, then dive into RESTCONF since you already rock the Requests library!
+**Pro Tip**: Start with Section 01 to explore and get oriented, then dive into RESTCONF since you already rock the Requests library!
 
 ## 🎯 Practice Callouts
 
 > **"We don't give you the fish - we teach you to fish!"** Every module contains starter code with TODO items that YOU need to implement. This isn't about copying solutions; it's about building the skills you'll need for assessments and your career.
 
-## � Prerequisites
+## 📋 Prerequisites
 
 1. **Install requirements**: `pip install -r requirements.txt`
 2. **Start exploring**: Begin with `01_exploration/`
 3. **Follow your curiosity**: Each README guides your next steps
 4. **Code to learn**: Complete the TODO items to make everything work
 
-## � Your Toolkit
+## 🛠️ Your Toolkit
 
 **Languages & Libraries You'll Use:**
 
@@ -101,7 +101,7 @@ Each directory contains your mission briefing and starter code. **No copy-paste 
 - 🆕 NETCONF XML-based protocols
 - 🆕 Enterprise network automation patterns
 
-## � Success Criteria
+## 🏆 Success Criteria
 
 By the end, you'll confidently explain and demonstrate:
 
