@@ -1,4 +1,4 @@
-# 06: Advanced NETCONF & XML Processing
+# Section 06: Advanced NETCONF & XML Processing
 
 ## 🎯 Mission
 
