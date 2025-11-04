@@ -1,4 +1,4 @@
-# Module 03: YANG Models - The Network "Blueprint"
+# Section 03: YANG Models - The Network "Blueprint"
 
 ## 📚 What the Heck is YANG?
 
