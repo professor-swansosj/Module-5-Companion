@@ -1,5 +1,5 @@
 """
-Module 05: NETCONF Fundamentals 
+Section 05: NETCONF Fundamentals 
 
 TODO: Master NETCONF - the SSH/XML approach to network management
 CHALLENGE: Learn a completely different protocol from RESTCONF!
