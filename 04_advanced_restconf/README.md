@@ -1,4 +1,4 @@
-# Module 04: RESTCONF Configuration Management
+# Section 04: RESTCONF Configuration Management
 
 ## 📚 Making Real Changes to Network Devices
 
