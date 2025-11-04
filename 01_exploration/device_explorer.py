@@ -1,5 +1,5 @@
 """
-Module 01: Network Device Explorer
+Section 01: Network Device Explorer
 
 TODO: Build functions to explore network devices using RESTCONF
 CHALLENGE: Figure out how to connect to network devices using HTTP!
