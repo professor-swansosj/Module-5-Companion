@@ -1,4 +1,4 @@
-# Module 02: RESTCONF Foundations
+# Section 02: RESTCONF Foundations
 
 ## 📚 What is RESTCONF?
 
