@@ -1,5 +1,5 @@
 """
-Module 03: YANG Model Explorer
+Section 03: YANG Model Explorer
 
 TODO: Understand YANG models - the "blueprints" for network device data
 CHALLENGE: Figure out how network devices organize their data!
