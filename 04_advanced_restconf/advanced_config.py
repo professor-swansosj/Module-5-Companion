@@ -1,5 +1,5 @@
 """
-Module 04: RESTCONF Configuration
+Section 04: RESTCONF Configuration
 
 TODO: Master configuration changes using RESTCONF PUT/PATCH operations  
 CHALLENGE: Make safe configuration changes to network devices!
