@@ -1,4 +1,4 @@
-# Module 01: Network Device Explorer
+# Section 01: Network Device Explorer
 
 ## 🎯 What You'll Learn
 
