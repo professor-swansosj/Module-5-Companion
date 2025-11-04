@@ -1,4 +1,4 @@
-# 07: Integration & Automation
+# Section 07: Integration & Automation
 
 ## 🎯 Mission
 
