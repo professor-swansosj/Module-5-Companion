@@ -1,4 +1,4 @@
-# Module 05: NETCONF Fundamentals
+# Section 05: NETCONF Fundamentals
 
 ## 📚 What is NETCONF and Why Should You Care?
 
