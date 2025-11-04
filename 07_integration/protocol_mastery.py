@@ -1,5 +1,5 @@
 """
-Module 07: Protocol Integration Challenge
+Section 07: Protocol Integration Challenge
 
 TODO: Master both RESTCONF and NETCONF by building comparison tools
 FINAL CHALLENGE: Prove you understand both protocols by implementing parallel solutions!
