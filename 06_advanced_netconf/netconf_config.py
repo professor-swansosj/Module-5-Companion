@@ -1,5 +1,5 @@
 """
-Module 06: NETCONF Configuration Management
+Section 06: NETCONF Configuration Management
 
 TODO: Master configuration changes using NETCONF transactions
 CHALLENGE: Use NETCONF's advanced features for safer config changes!
